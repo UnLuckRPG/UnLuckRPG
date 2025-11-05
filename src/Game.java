@@ -4,6 +4,9 @@ import region.Region;
 import region.Shop;
 import unit.Player;
 
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 public class Game {
     // 총 스테이지 수
     private static final int MAX_STAGE_NUM = 5;
@@ -21,9 +24,9 @@ public class Game {
     public static int currentStageNum() {
         return currentStageNum;
     }
+    private static StringBuilder sb = new StringBuilder();
 
-    public void play() {
-        StringBuilder sb = new StringBuilder();
+    public void play() throws Exception {
         // 1번째 줄
         for (int i = 0; i < 31; i++) sb.append("ㅁ");
         sb.append("\n");
@@ -43,8 +46,25 @@ public class Game {
         sb.append("ㅁ\n");
         // 5번째 줄
         for (int i = 0; i < 31; i++) sb.append("ㅁ");
-
         System.out.println(sb);
+
+        playStartAnimation();
+
+
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.print("게임을 시작합니다.(y/n) : ");
+            String userInput = sc.nextLine();
+            if (userInput.equals("y")) {
+                break;
+            } else if (userInput.equals("n")) {
+                System.out.println("게임을 종료합니다.");
+                return;
+            } else {
+                System.out.println("y 또는 n을 입력해주세요.");
+            }
+        }
 
         // 플레이어 생성
         Player player = new Player(100, 100);
@@ -70,10 +90,37 @@ public class Game {
         }
 
         if (isWinner == true) {
-            System.out.println("플레이어는 무사히 여행을 마쳤습니다... 플레이어의 승리");
+            System.out.println("======");
+            System.out.println("====== 플레이어는 무사히 여행을 마쳤습니다... 플레이어의 승리");
+            System.out.println("======");
         } else {
-            System.out.println("플레이어는 패배했습니다. GAME OVER");
+            System.out.println("======");
+            System.out.println("====== 플레이어는 패배했습니다. GAME OVER");
+            System.out.println("======");
         }
+    }
+
+    public static void playStartAnimation() throws Exception {
+        sb = new StringBuilder();
+        sb.append("\r");
+        for (int i = 0; i < 31; i++) {
+            sb.append("ㅇ");
+            System.out.print(sb);
+            TimeUnit.MILLISECONDS.sleep(10);
+        }
+        for (int i = 0; i < 31; i++) {
+            sb.deleteCharAt(sb.length() - 1);
+            System.out.print(sb);
+            TimeUnit.MILLISECONDS.sleep(10);
+        }
+        for (int i = 0; i < 31; i++) {
+            sb.append("ㅇ");
+            System.out.print(sb);
+            TimeUnit.MILLISECONDS.sleep(10);
+        }
+        sb.append("\n");
+        System.out.println(sb);
+        TimeUnit.MILLISECONDS.sleep(500);
     }
 
     public static void displayCurrentStage(Region region) {
@@ -91,7 +138,7 @@ public class Game {
         System.out.println("======");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new Game().play();
     }
 }

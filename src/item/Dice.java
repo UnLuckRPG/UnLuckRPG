@@ -22,5 +22,4 @@ public abstract class Dice extends Item {
         }
         target.setHp(targetHp);
     }
-
 }

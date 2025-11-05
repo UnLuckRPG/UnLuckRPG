@@ -9,6 +9,4 @@ public class NormalDice extends Dice {
         this.min = 1;
         this.max = 6;
     }
-
-
 }

@@ -9,6 +9,4 @@ public class ExtremeDice extends Dice {
         this.min = 1;
         this.max = 10;
     }
-
-
 }

@@ -11,14 +11,11 @@ public class Player extends Unit {
     private int gold; // 플레이어의 소지금
     private List<Item> items; // 소유하고 있는 아이템들
     private static final int MAX_ITEM = 5; // 최대 소유 가능한 아이템의 개수
-    private int currentItemNum; // 플레이어가 현재 소유한 아이템의 개수
 
     public Player(int maxHp, int gold) {
         super(maxHp);
         this.gold = gold;
         items = new ArrayList<>();
-        // TODO : 기본으로 일반 주사위 하나를 받음
-        currentItemNum = 1;
     }
 
     // 아이템 추가 실패시 false 반환 (예 : 최대 소유 가능한 아이템 수를 초과했을 떄)

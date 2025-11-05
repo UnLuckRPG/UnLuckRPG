@@ -9,6 +9,4 @@ public class StableDice extends Dice {
         this.min = 3;
         this.max = 4;
     }
-
-
 }

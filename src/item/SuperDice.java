@@ -9,6 +9,4 @@ public class SuperDice extends Dice {
         this.min = 5;
         this.max = 10;
     }
-
-
 }
