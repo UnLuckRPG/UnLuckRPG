@@ -2,9 +2,6 @@ package item;
 
 import unit.Unit;
 
-public class Dice extends Item {
-    @Override
-    public void effect(Unit unit) {
-
-    }
+public abstract class Dice extends Item {
+    public abstract void effect(Unit target);
 }
