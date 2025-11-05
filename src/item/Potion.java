@@ -1,4 +1,8 @@
 package item;
 
-public class Potion extends Item {
+import unit.Unit;
+
+public abstract class Potion extends Item {
+    @Override
+    public abstract void effect(Unit unit);
 }

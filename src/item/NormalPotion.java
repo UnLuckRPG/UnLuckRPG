@@ -2,7 +2,7 @@ package item;
 
 import unit.Unit;
 
-public class Dice extends Item {
+public class NormalPotion extends Potion {
     @Override
     public void effect(Unit unit) {
 
