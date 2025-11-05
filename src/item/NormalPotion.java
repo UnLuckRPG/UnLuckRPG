@@ -7,6 +7,6 @@ public class NormalPotion extends Potion {
 
     @Override
     public void effect(Unit target) {
-
+        target.setHp(target.getMaxHp());
     }
 }
