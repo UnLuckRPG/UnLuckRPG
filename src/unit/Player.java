@@ -27,7 +27,7 @@ public class Player extends Unit {
         return true;
     }
 
-    private boolean removeItem(Item targetItem) {
+    public boolean removeItem(Item targetItem) {
         return items.remove(targetItem);
     }
 
@@ -66,4 +66,9 @@ public class Player extends Unit {
     public void setGold(int gold) {
         this.gold = gold;
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
 }

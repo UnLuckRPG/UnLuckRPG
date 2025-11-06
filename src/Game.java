@@ -73,7 +73,7 @@ public class Game {
         // 임시 : 일단 상점으로만 채움
         Region[] stages = new Region[MAX_STAGE_NUM];
         for (int i = 0; i < stages.length; i++) {
-            stages[i] = new Inn();
+            stages[i] = new Shop();
         }
 
         // 스테이지 진행
