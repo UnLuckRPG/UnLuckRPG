@@ -3,7 +3,8 @@ package unit;
 public class Unit {
     private final int maxHp;
     private int hp;
-    Unit(int maxHp) {
+
+    protected Unit(int maxHp) {
         this.maxHp = maxHp;
         this.hp = maxHp; // 처음 생성될떄는 체력이 꽉찬상태
     }

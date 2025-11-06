@@ -2,6 +2,7 @@ package unit;
 
 import item.Dice;
 import item.Item;
+import item.NormalDice;
 import item.Potion;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Player extends Unit {
         super(maxHp);
         this.gold = gold;
         items = new ArrayList<>();
+        addItem(new NormalDice()); // 기본으로 기본 주사위 하나 소유
     }
 
     // 아이템 추가 실패시 false 반환 (예 : 최대 소유 가능한 아이템 수를 초과했을 떄)
