@@ -7,6 +7,10 @@ import java.util.Random;
 public abstract class Dice extends Item {
     protected int min;
     protected int max;
+
+    public Dice(String name) {
+        super(name);
+    }
     protected Random random = new Random();
 
     public int roll() {

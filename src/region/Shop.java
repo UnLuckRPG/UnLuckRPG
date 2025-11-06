@@ -13,7 +13,7 @@ public class Shop extends Region {
     public void enter(Player player) {
         Scanner sc = new Scanner(System.in);
 
-
+        System.out.println();
         System.out.println("💰💰💰💰💰 Lucky Shop에 오신걸 환영합니다 💰💰💰💰💰");
         System.out.println();
 
@@ -48,14 +48,32 @@ public class Shop extends Region {
                             player.addItem(new NormalPotion());
 
                             System.out.println();
-                            System.out.println("현재 보유 중인 아이템");
+                            System.out.println("🧰 현재 보유 중인 아이템 🧰");
                             System.out.println("===================");
 
-                            List<Item> itemList = player.getItems();
-                            for (int i = 0; i < player.getItems().size(); i++) {
-                                System.out.println((i+1) + ". " + itemList.get(i).getClass().getSimpleName());
+
+                            Dice dice = player.getDice();
+                            if (dice != null) {
+                                System.out.println("🎲 " +  dice.getName());
                             }
+
+                            // 포션 출력
+                            List<Potion> potions = player.getPotions();
+                            if (potions != null && !potions.isEmpty()) {
+                                System.out.println("💊 " + potions.get(0).getName() + ": " + potions.size() + "개");
+                            }
+
+                            // 아무것도 없으면
+                            if (dice == null && (potions == null || potions.isEmpty())) {
+                                System.out.println("보유한 아이템이 없습니다.");
+                            }
+
+//                            List<Item> itemList = player.getItems();
+//                            for (int i = 0; i < player.getItems().size(); i++) {
+//                                System.out.println((i+1) + ". " + itemList.get(i).getClass().getSimpleName());
+//                            }
                             System.out.println("===================");
+                            System.out.println();
                             return;
 
                         } else {
@@ -79,13 +97,25 @@ public class Shop extends Region {
                             player.addItem(selectedDice);
 
                             System.out.println();
-                            System.out.println("현재 보유 중인 아이템");
+                            System.out.println("🧰 현재 보유 중인 아이템 🧰");
                             System.out.println("===================");
-                            List<Item> itemList = player.getItems();
-                            for (int i = 0; i < player.getItems().size(); i++) {
-                                System.out.println((i+1) + ". " + itemList.get(i).getClass().getSimpleName());
+                            Dice dice = player.getDice();
+                            if (dice != null) {
+                                System.out.println("🎲 " +  dice.getName());
+                            }
+
+                            // 포션 출력
+                            List<Potion> potions = player.getPotions();
+                            if (potions != null && !potions.isEmpty()) {
+                                System.out.println("💊 " +  potions.get(0).getName() + ": " + potions.size() + "개");
+                            }
+
+                            // 아무것도 없으면
+                            if (dice == null && (potions == null || potions.isEmpty())) {
+                                System.out.println("보유한 아이템이 없습니다.");
                             }
                             System.out.println("===================");
+                            System.out.println();
                             return;
                         }
 
@@ -136,13 +166,25 @@ public class Shop extends Region {
                             player.addItem(new NormalPotion());
 
                             System.out.println();
-                            System.out.println("현재 보유 중인 아이템");
+                            System.out.println("🧰 현재 보유 중인 아이템 🧰");
                             System.out.println("===================");
-                            List<Item> itemList = player.getItems();
-                            for (int i = 0; i < player.getItems().size(); i++) {
-                                System.out.println((i+1) + ". " + itemList.get(i).getClass().getSimpleName());
+                            Dice dice = player.getDice();
+                            if (dice != null) {
+                                System.out.println("🎲 " +  dice.getName());
+                            }
+
+                            // 포션 출력
+                            List<Potion> potions = player.getPotions();
+                            if (potions != null && !potions.isEmpty()) {
+                                System.out.println("💊 " + potions.get(0).getName() + ": " + potions.size() + "개");
+                            }
+
+                            // 아무것도 없으면
+                            if (dice == null && (potions == null || potions.isEmpty())) {
+                                System.out.println("보유한 아이템이 없습니다.");
                             }
                             System.out.println("===================");
+                            System.out.println();
                         } else {
                             System.out.println("주사위🎲를 받았습니다.");
                             Dice oldDice = player.getDice();
@@ -161,13 +203,26 @@ public class Shop extends Region {
 
                             player.addItem(selectedDice);
 
-                            System.out.println("현재 보유 중인 아이템");
+                            System.out.println();
+                            System.out.println("🧰 현재 보유 중인 아이템 🧰");
                             System.out.println("===================");
-                            List<Item> itemList = player.getItems();
-                            for (int i = 0; i < player.getItems().size(); i++) {
-                                System.out.println((i+1) + ". " + itemList.get(i).getClass().getSimpleName());
+                            Dice dice = player.getDice();
+                            if (dice != null) {
+                                System.out.println("🎲 " +  dice.getName());
+                            }
+
+                            // 포션 출력
+                            List<Potion> potions = player.getPotions();
+                            if (potions != null && !potions.isEmpty()) {
+                                System.out.println("💊 " + potions.get(0).getName() + ": " + potions.size() + "개");
+                            }
+
+                            // 아무것도 없으면
+                            if (dice == null && (potions == null || potions.isEmpty())) {
+                                System.out.println("보유한 아이템이 없습니다.");
                             }
                             System.out.println("===================");
+                            System.out.println();
                         }
 
                         return;
@@ -188,8 +243,9 @@ public class Shop extends Region {
                         System.out.println();
 
                         System.out.println("===================");
-                        System.out.println("현재 플레이어의 HP : " + player.getHp() + "입니다.");
+                        System.out.println("♥ 현재 플레이어의 HP : " + player.getHp() + "입니다.");
                         System.out.println("===================");
+                        System.out.println();
                         return;
                     }
                 default:
