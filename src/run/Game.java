@@ -30,7 +30,7 @@ public class Game {
 
     public void play() throws Exception {
         // 1번째 줄
-        for (int i = 0; i < 31; i++) sb.append("ㅁ");
+        for (int i = 0; i < 29; i++) sb.append("ㅁ");
         sb.append("\n");
         // 2번째 줄
         sb.append("ㅁ");
@@ -47,7 +47,7 @@ public class Game {
         for (int i = 0; i < 29; i++) sb.append("　");
         sb.append("ㅁ\n");
         // 5번째 줄
-        for (int i = 0; i < 31; i++) sb.append("ㅁ");
+        for (int i = 0; i < 29; i++) sb.append("ㅁ");
         System.out.println(sb);
 
         playStartAnimation();
@@ -92,10 +92,12 @@ public class Game {
         }
 
         if (isWinner == true) {
-            System.out.println("======");
-            System.out.println("====== 플레이어는 무사히 여행을 마쳤습니다... 플레이어의 승리");
-            System.out.println("======");
+            System.out.println();
+            System.out.println("====== ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨ ");
+            System.out.println("======   플레이어는 무사히 여행을 마쳤습니다... 플레이어의 승리");
+            System.out.println("====== ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨ ");
         } else {
+            System.out.println();
             System.out.println("======");
             System.out.println("====== 플레이어는 패배했습니다. GAME OVER");
             System.out.println("======");
@@ -125,17 +127,17 @@ public class Game {
     public static void playStartAnimation() throws Exception {
         sb = new StringBuilder();
         sb.append("\r");
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 29; i++) {
             sb.append("ㅇ");
             System.out.print(sb);
             TimeUnit.MILLISECONDS.sleep(10);
         }
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 29; i++) {
             sb.deleteCharAt(sb.length() - 1);
             System.out.print(sb);
             TimeUnit.MILLISECONDS.sleep(10);
         }
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 29; i++) {
             sb.append("ㅇ");
             System.out.print(sb);
             TimeUnit.MILLISECONDS.sleep(10);
@@ -154,10 +156,12 @@ public class Game {
         } else if (region instanceof Dungeon) {
             regionName = "던전";
         }
+        System.out.println();
         System.out.println("======");
         System.out.println("====== 현재 스테이지 : " + currentStageNum());
         System.out.println("====== 이번 스테이지는 " + regionName + "입니다.");
         System.out.println("======");
+        System.out.println();
         Game.delayOutput(3000);
     }
 

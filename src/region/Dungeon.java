@@ -92,11 +92,15 @@ public class Dungeon extends Region {
     }
 
     private void displayPlayerStatus(Player player) {
-      System.out.println("플레이어의 hp : " + player.getHp() + "/" + player.getMaxHp());
+        System.out.println("============================");
+        System.out.println("플레이어의 hp : " + player.getHp() + "/" + player.getMaxHp());
+        System.out.println("============================");
     }
 
     private void displayPlayerStatus(Enemy enemy) {
-      System.out.println(enemy.getName() + "의 hp : " + enemy.getHp() + "/" + enemy.getMaxHp());
+        System.out.println("============================");
+        System.out.println(enemy.getName() + "의 hp : " + enemy.getHp() + "/" + enemy.getMaxHp());
+        System.out.println("============================");
     }
 
 
@@ -133,7 +137,7 @@ public class Dungeon extends Region {
             Game.delayOutput(1000);
 
             dice.effect(enemy);
-            System.out.println("플레이어가 적에게 " + dice.getRecentEye() + "의 피해를 입혔습니다!");
+            System.out.println("⚔️플레이어가 적에게 " + dice.getRecentEye() + "의 피해를 입혔습니다!⚔️");
             Game.delayOutput(1000);
             displayPlayerStatus(enemy);
             Game.delayOutput(1000);
@@ -185,10 +189,12 @@ public class Dungeon extends Region {
 
     // 적의 공격턴
     private void takeTurn(Enemy enemy, Player player, Scanner sc) {
+        System.out.println();
       System.out.println("👺" +  enemy.getName() + "이/가 공격합니다!");
       Game.delayOutput(1000);
       int damage = enemy.attack(player);
-      System.out.println("적이 플레이어에게 " + damage + "의 피해를 입혔습니다!");
+        System.out.println();
+      System.out.println("🔪적이 플레이어에게 " + damage + "의 피해를 입혔습니다!");
       displayPlayerStatus(player);
       Game.delayOutput(1000);
     }
